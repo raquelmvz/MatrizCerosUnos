@@ -79,16 +79,16 @@ public class Matriz {
             //como tenemos el num de fila y de col del elemento que queremos (sera uno de los 0)
             //sumamos los elem de la matriz de coordenadas para 'desplazarnos' en todas direcciones
 
-            //para las coordenadas x cogemos el primer elem y para las coord y el segundo
-            int coordX = fila + coordenada[0];
-            int coordY = col + coordenada[1];
+            //para las coordenadas de la fila cogemos el primer elem y para las coord de las col el segundo
+            int coordFila = fila + coordenada[0];
+            int coordCol = col + coordenada[1];
 
             //se comprueba que la coordenada obtenida no se sale de la matriz
-            if (coordX >= 0 && coordX < matriz.length) {
-                if (coordY >= 0 && coordY < matriz[coordX].length) {
+            if (coordFila >= 0 && coordFila < matriz.length) {
+                if (coordCol >= 0 && coordCol < matriz[coordFila].length) {
                     //se añade a la lista el elemento que se encuentre en cada coordenada, asi tenemos todos los numeros que rodean
                     //al elemento en una sola lista
-                    listaADevolver.add(matriz[coordX][coordY]);
+                    listaADevolver.add(matriz[coordFila][coordCol]);
                 }
             }
         }
@@ -106,7 +106,7 @@ public class Matriz {
 
         //para guardar el resultado
         //si no hay solucion devolvera las coordenadas -1,-1
-        int[] coordenadas = new int[]{-1, -1};
+        int[] coordenadas = new int[2];
 
         //recorro la matriz en busca de 0s
         for (int i = 0; i < this.matriz.length; i++) {
@@ -116,11 +116,11 @@ public class Matriz {
                     coordenadas[0] = i;
                     coordenadas[1] = j;
                     //En cuanto el primer 0 cumpla la condicion me salgo del bucle
-                    break;
+                    return coordenadas;
                 }
             }
         }
-        return coordenadas;
+        return new int[]{-1, -1};
 
     }
 }

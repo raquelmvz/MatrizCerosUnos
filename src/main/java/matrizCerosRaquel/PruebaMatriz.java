@@ -19,7 +19,7 @@ public class PruebaMatriz {
 //        //impresion de la matriz por pantalla
 //        matriz.imprimeMatrizCuadrada();
         System.out.println("Ejemplo que se cumple siempre:");
-        int[][] matriz = new int[][]{{0, 0, 0, 0, 0}, {0, 1, 1, 1, 0}, {0, 1, 0, 1, 0}, {0, 1, 1, 1, 0}, {0, 0, 0, 0, 0}};
+        int[][] matriz = new int[][]{{0, 1, 1, 1, 0}, {0, 1, 0, 1, 0}, {0, 1, 1, 1, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}};
         Matriz matrizCorrecta = new Matriz(matriz);
         matrizCorrecta.imprimeMatrizCuadrada();
         int[] coordenadas = matrizCorrecta.coordenadasCeroRodeadoPorUnos();
