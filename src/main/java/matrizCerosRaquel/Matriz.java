@@ -84,8 +84,8 @@ public class Matriz {
             int coordY = col + coordenada[1];
 
             //se comprueba que la coordenada obtenida no se sale de la matriz
-            if (coordY >= 0 && coordY < matriz.length) {
-                if (coordX >= 0 && coordX < matriz[coordY].length) {
+            if (coordX >= 0 && coordX < matriz.length) {
+                if (coordY >= 0 && coordY < matriz[coordX].length) {
                     //se añade a la lista el elemento que se encuentre en cada coordenada, asi tenemos todos los numeros que rodean
                     //al elemento en una sola lista
                     listaADevolver.add(matriz[coordX][coordY]);
